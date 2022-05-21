@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心小屋</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding: 0;
+    }
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+       
+    }
+
+    .header{
+        background-color: #fdc8cf;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        /* position: fixed; */
+        width: 100%;
+        height: 40px;
+       
+    }
+    /* .header .container{
+        height: 40px;
+        width: 200px;
+        background-color: #b9609a;
+        float: left;
+        margin-left: 30px;
+        margin-right: 20px;
+        text-align: center;
+        
+    } */
+    /* h3{
+            background-color: rgb(153, 99, 120);
+            background-color: #fdc8cf;
+            line-height: 40px;
+            padding-left: 10px;
+            border-radius: 5px;
+            width: 120px;
+            float: left;
+            margin-right: 20px;
+            margin-left: 50px;
+            margin-top: 0px;
+            text-align: center;
+            
+        }
+    h3:hover{
+        background-color: blanchedalmond;
+    } */
+
+    #navigation a {
+        /* z-index: ; */
+        display: block;
+        text-decoration: none;
+        color: #000;
+        width: 200px;
+        line-height: 40px;
+        border: 1px solid #fff;
+        border-width: 1px 1px 0 0;
+        background: #fdc8cf;
+        font-size: larger;
+        /* font-weight: bold; */
+      }
+      #navigation a:hover{
+        color: beige;
+      }
+      #navigation li {
+        list-style-type: none;
+        text-align: center;
+        position: relative;
+      }
+      #navigation > li {
+        float: left;
+      }
+      #navigation > li > ul {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+      #navigation li ul li ul {
+        
+        position: absolute;
+        top: 0px;
+        left: 121px;
+        margin: 0;
+        padding: 0;
+      }
+      #navigation li ul {
+        z-index: 3;
+        display: none;
+      }
+
+    h2{
+      color: rgb(230, 79, 116);
+    }
+    .photo0{
+      
+        margin-top: 10px;
+        margin-left: 30px;
+        
+    }
+    /* .photo0_1{
+      float: right;
+      margin-left: 20px;
+      margin-top: 10px;
+    } */
+    
+    #container {
+        position: relative;
+        width: 1200px;
+        height: 500px;
+        /* border: 3px solid #333; */
+        overflow: hidden;
+        margin-left: 0px;
+        margin-top: 10px;
+      }
+      #list {
+        position: absolute;
+        z-index: -1;
+        width: 4800px;
+        height: 500px;
+        left: 0px;
+        margin-top: 10px;
+        
+      }
+      #list img {
+        float: left;
+        width: 1200px;
+        height: 500px;
+        
+      }
+      #buttons {
+        position: absolute;
+        left: 250px;
+        bottom: 20px;
+        z-index: 2;
+        height: 10px;
+        width: 100px;
+      }
+      #buttons span {
+        float: left;
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: #333;
+        cursor: pointer;
+      }
+      #buttons .on {
+        background: orangered;
+      }
+      .arrow {
+        position: absolute;
+        top: 180px;
+        z-index: 2;
+        display: none;
+        width: 40px;
+        height: 40px;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 39px;
+        text-align: center;
+        color: #fff;
+        background-color: RGBA(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+      .arrow:hover {
+        background-color: RGBA(0, 0, 0, 0.7);
+      }
+      #container:hover .arrow {
+        display: block;
+      }
+      #prev {
+        left: 20px;
+        text-decoration: none;
+      }
+      #next {
+        right: 20px;
+        text-decoration: none;
+      }
+   
+    p{
+        margin-top: 0px;
+        /* background-color: #fdc8cf; */
+        text-align: center;
+        
+    }
+    .photo2{
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-left: 0px;
+
+    }
+    /* .left1{
+      float: left;
+      margin-top: 100px;
+
+    } */
+    .tittle1{
+        float: left;
+        text-align: center;
+        height: 80px;
+        width: 250px;
+        /* background-color: white; */
+        margin-right: 350px;
+        margin-left: 0px;
+    }
+    .blank1{
+        float:left;
+        height: 80px;
+        width: 1200px;
+        /* background-color: white; */
+        margin-bottom: 10px;
+        margin-top: 20px;
+
+    }
+    .left1{
+        float: left;
+        height: 130px;
+        width: 500px;
+        /* background-color: #c6e475; */
+        margin-bottom: 10px;
+        margin-left: 0px;
+        /* border-style: dashed; */
+
+    }
+    .right1{
+        float: right;
+        height: 130px;
+        width: 500px;
+        /* background-color: #c7f3a8; */
+        margin-bottom: 10px;
+        margin-right: 90px;
+        /* border-style: dashed; */
+        /* border-color: #fdc8cf; */
+
+
+    }
+    .blank2_1{
+        float:left;
+        height: 80px;
+        width: 360px;
+        /* background-color: white; */
+        margin-bottom: 10px;
+        margin-top: 20px;
+        margin-right: 40px;
+        margin-left: 0px;
+
+    }
+    .blank2_2{
+      float:right;
+        height: 80px;
+        width: 360px;
+        /* background-color: white; */
+        margin-bottom: 10px;
+        margin-top: 20px;
+
+    }
+    .blank3_1{
+        float: left;
+        height: 80px;
+        width: 1200px;
+        /* background-color: white; */
+        margin-bottom: 10px;
+        margin-top: 0px;
+        margin-right: 30px;
+        margin-left: 0px;
+
+    }
+    /* .blank3_2{
+        float:right;
+        height: 80px;
+        width: 200px;
+        background-color: white;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-left: 0px;
+
+    } */
+
+    .tittle2a{
+        float: left;
+        text-align: center;
+        height: 70px;
+        width: 380px;
+        /* background-color: white; */
+        
+        
+        
+    }.tittle2b{
+        float: left;
+        text-align: center;
+        height: 70px;
+        width: 380px;
+        /* background-color: white; */
+        
+        
+        
+    }.tittle2c{
+        float: right;
+        text-align: center;
+        height: 70px;
+        width: 380px;
+        /* background-color: white; */
+        
+        
+        
+    }
+    .tittle3a{
+        float: left;
+        text-align: center;
+        height: 70px;
+        width: 380px;
+        /* background-color: white; */
+        margin-right: 20px;
+        
+        
+        
+    }.tittle3b{
+        float: left;
+        text-align: center;
+        height: 70px;
+        width: 375px;
+        /* background-color: white; */
+        margin-right: 25px;
+        
+
+     
+        
+        
+    }
+    /* .tittle3c{
+        float: right;
+        text-align: center;
+        height: 70px;
+        width: 300px;
+        background-color: white;
+        margin-left: 30px;
+        
+        
+    } */
+    .left2{
+        float: left;
+        height: 180px;
+        width: 360px;
+        /* background-color: #adc29d; */
+        margin-bottom: 11px;
+        /* margin-right: 10px; */
+        margin-top: 10px;
+    }
+    .right2{
+        float: right;
+        height: 180px;
+        width: 380px;
+        /* background-color: #667958; */
+        margin-bottom: 10px;
+        margin-left: 40px;
+        margin-top: 10px;
+
+
+    }
+    
+    .footer{
+        clear:both;
+        background-color: #fdc8cf;
+        margin-top: 50px;
+        height: 40px;
+        margin-left: 0px;
+        
+        width: 1200px;
+        
+    }
+    .goback{
+        width: 40px;
+        height: 40px;
+        background-color: #585d79;
+        position: fixed;
+        right: 10px;
+        bottom: 50px;
+        border-radius: 50%;
+        margin-right: 2px;
+    }
+    .photo00{
+      float: right;
+      margin-top: -100px;
+      
+    }
+    .end{
+      width: 500px;
+      height: 10px;
+      margin-bottom: 10px;
+      margin-top: 100px;
+    }
+    #cont li{
+      list-style-type: disc;
+        text-align: left;
+        position: relative;
+    }
+    
+    
+</style>
+<body background="img/bak.png" >
+  
+    <div class="photo0">
+      <img src="img/爱心小屋p0.01.png" width="350px" height="130px" />
+      <!-- <img src="img/flw.png" width="100px" height="100px" />
+      <img src="img/flw.png" width="100px" height="100px" />
+      <img src="img/flw.png" width="100px" height="100px" /> -->
+    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
+    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
+    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
+    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
+    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
+
+     
+     
+  </div>
+  
+  <ul id="navigation">
+    <li>
+      <a href="#" >首页</a>
+      
+    </li>
+    <li>
+      <a href="#">组织概况</a>
+      <ul>
+        <li><a href="#">组织简介</a></li>
+        <!-- <li><a href="#">栏目1->菜单2</a></li>
+        <li><a href="#">栏目1->菜单3</a></li>
+        <li><a href="#">栏目1->菜单4</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#">新闻动态</a>
+      <ul>
+        <li><a href="#">时政要闻</a></li>
+        <!-- <li><a href="#">栏目1->菜单2</a></li>
+        <li><a href="#">栏目1->菜单3</a></li>
+        <li><a href="#">栏目1->菜单4</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#">业务工作</a>
+      <ul>
+        <li><a href="#">山区献礼</a></li>
+        <li><a href="#">贫困守护</a></li>
+
+        <!-- <li><a href="#">栏目1->菜单2</a></li>
+        <li><a href="#">栏目1->菜单3</a></li>
+        <li><a href="#">栏目1->菜单4</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#">信息公开</a>
+      <ul>
+        <li><a href="#">财务公开</a></li>
+        <!-- <li><a href="#">栏目1->菜单2</a></li>
+        <li><a href="#">栏目1->菜单3</a></li>
+        <li><a href="#">栏目1->菜单4</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#">我要参与</a>
+      <ul>
+        <li><a href="#">捐赠</a></li>
+
+      </ul>
+    </li>
+
+
+
+    
+    <!-- <li>
+      <a href="#">栏目2</a>
+      <ul>
+        <li>
+          <a href="#">栏目2->菜单1</a>
+          <ul>
+            <li>
+              <a href="#">菜单1</a>
+              <ul>
+                <li>
+                  <a href="#">菜单3</a>
+                  <ul>
+                    <li><a href="#">菜单5</a></li>
+                    <li><a href="#">菜单6</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">菜单4</a></li>
+              </ul>
+            </li>
+            <li><a href="#">菜单2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">栏目2->菜单2</a></li>
+        <li><a href="#">栏目2->菜单3</a></li>
+        <li><a href="#">栏目2->菜单4</a></li>
+        <li><a href="#">栏目2->菜单5</a></li>
+      </ul>
+    </li>
+  </ul> -->
+
+<!-- <div class="header" id="hd">
+        
+
+<h3>首页</h3>
+<h3>组织概况</h3>
+<h3>新闻动态</h3>
+<h3>业务工作</h3>
+<h3>信息公开</h3>
+<h3><a href="https://pinko0.github.io/a.html">我要参与</a></h3>
+
+</div> -->
+
+<div id="container">
+    <div id="list">
+      <img src="img/爱心小屋p1.1.jpeg" />
+      <img src="img/爱心小屋p1.jpg" />
+      <img src="img/爱心小屋p1.4.jpeg" />
+      <img src="img/爱心小屋p1.5.jpg" />
+
+      <!-- <img src="img/爱心小屋p1.2.jpeg" />
+      <img src="img/爱心小屋p1.3.jpeg" /> -->
+    </div>
+    <div id="buttons">
+      <span index="1" class="on" onclick="setleft(0)"></span>
+      <span index="2" onclick="setleft(-1200)"></span>
+      <span index="3" onclick="setleft(-2400)"></span>
+      <span index="4" onclick="setleft(-3600)"></span>
+    </div>
+    <b href="javascript:;" id="prev" class="arrow">&lt;</b>
+    <b href="javascript:;" id="next" class="arrow">&gt;</b>
+  </div>
+<!-- <div class="photo1">
+    <img src="img/爱心小屋p1.jpg" alt=none width ="1200px" height="500px" >
+</div> -->
+<!-- <div class="container"><div class="ph"><p>某地区贫困患儿得到探望</p></div></div> -->
+<div class="photo2">
+    <img src="img/爱心小屋pic2.png" alt=none width ="1200px" height="160px" >
+    
+</div>
+
+<div class="container">
+  <div class="blank1">
+    <div class="tittle1"><h2>工作动态</h2><hr></div>
+    <div class="tittle1"><h2>信息公开</h2><hr></div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="left1">
+    <ul id="cont">
+      <li>爱心小屋出资看望空巢老人 </li>
+      <li>爱心小屋为外来务工人员提供住所</li>
+      <li>爱心小屋向某社区捐赠防疫口罩</li>
+  </ul>
+
+  
+  <!-- ·爱心小屋出资看望空巢老人<br>
+  ·爱心小屋为外来务工人员提供住所 <br>
+  ·爱心小屋向某社区捐赠防疫口罩3 <br> -->
+  </div>
+  <div class="right1">
+    <ul id="cont">
+      <li>爱心集体为上海高校提供物资支持 </li>
+      <li>爱心社区看望留守儿童</li>
+      <li>爱心人士为山区儿童匿名捐款</li>
+      
+  </ul>
+  </div>
+
+</div>
+<div class="photo2">
+  <img src="img/爱心小屋p3.1.png" alt=none width ="1200px" height="200px" >
+  
+</div>
+<div class="container">
+  <div class="blank2_1">
+    <div class="tittle2a"><h2>山区献礼</h2><hr></div>
+  </div>
+</div>
+<div class="container">
+  <div class="blank2_1">
+    <div class="tittle2b"><h2>贫困守护</h2><hr></div>
+  </div>
+</div>
+<div class="container">
+  <div class="blank2_2">
+    <div class="tittle2c"><h2>空巢关爱</h2><hr></div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="left2">
+    <ul id="cont">
+      <li>给山区孩子的一封信 </li>
+      <li>新年情暖小山村</li>
+      <li>守好山区“防疫关”</li>
+  </ul>
+  </div>
+  <div class="right2">
+    <ul id="cont">
+      <li>关爱空巢老人暖心行动 </li>
+      <li>空巢老人不空“心”</li>
+      <li>为空巢老人“定格”幸福晚年</li>
+  </ul>
+  </div>
+  <div class="right2">
+    <ul id="cont">
+      <li>用心用情关爱贫困群众 </li>
+      <li>抵达贫困县的“最后一公里”</li>
+      <li>可爱的贫困户们</li>
+  </ul>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="blank3_1">
+    <div class="tittle3a"><h2>病痛疗愈</h2><hr></div>
+    <div class="tittle3b"><h2>留守暖意</h2><hr></div>
+    <div class="tittle3b"><h2>特殊照料</h2><hr></div>
+    
+
+
+  </div>
+  <div class="container">
+    <div class="left2">
+      <ul id="cont">
+        <li>生命末期温暖陪伴</li>
+        <li>“心理处方”在病房</li>
+        <li>病房暖心“话疗”</li>
+    </ul>
+    </div>
+    <div class="right2">
+      <ul id="cont">
+        <li>与爱同行情暖特教</li>
+        <li>“折翼天使”不孤单</li>
+        <li>让每颗星星都闪闪发光</li>
+    </ul>
+    </div>
+    <div class="right2">
+      <ul id="cont">
+        <li>暖童心送关爱</li>
+        <li>防溺水专题宣传活动</li>
+        <li>用爱点亮留守之灯</li>
+    </ul>
+    </div>
+  </div>
+ 
+  <div class="footer" ></div>
+  
+  <div class="goback"></div>
+  <div class="container">
+    <div class="end"><p>Copyright©2022-现在 lovehouse.org.cn All rights reserved.</p></div>
+    <div class="photo00"><img src="img/爱心小屋p0.01.png" width="350px" height="130px" /></div>
+  
+  </div>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function displaySubMenu() {
+      var subMenu = this.getElementsByTagName("ul")[0];
+      subMenu.style.display = "block";
+    }
+
+    function hideSubMenu() {
+      var subMenu = this.getElementsByTagName("ul")[0];
+      subMenu.style.display = "none";
+    }
+
+    let nav = document.getElementById("navigation");
+    let lis = nav.getElementsByTagName("li");
+    for (let i = 0; i < lis.length; i++) {
+      let l = lis[i];
+      for (let j = 0; j < l.children.length; j++) {
+        console.log(l.children[j].tagName);
+        if (l.children[j].tagName == "UL") {
+          l.addEventListener("mouseover", displaySubMenu);
+          l.addEventListener("mouseout", hideSubMenu);
+          break;
+        }
+      }
+    }
+    
+    let width = 1200;
+    let list = document.getElementById("list");
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
+    let buttons=document.querySelectorAll("#buttons span");
+    let num = list.children.length; // get img number
+
+    function setleft(left){
+        list.style.left=left+"px";
+        for(let i=0;i<4;i++){
+            if(i==left/-1200){
+                buttons[i].className="on";
+            }
+            else{
+                buttons[i].className="";
+            }
+        }
+    }
+
+    function right(){
+        let left=parseInt(getComputedStyle(list).left);
+        if(left<=-3600){
+            left=0;
+        }
+        else{
+            left=left-1200;
+
+        }
+        list.style.left=left+"px";
+        let index=left/-1200;
+        console.log(buttons)
+        for(let i=0;i<4;i++){
+            if(i==index){
+                buttons[i].className="on";
+            }
+            else{
+                buttons[i].className="";
+            }
+        }
+    }
+
+    next.onclick=right
+    prev.onclick=function(){
+        let left=parseInt(getComputedStyle(list).left);
+        if(left>=0){
+            left=-3600;
+        }
+        else{
+            left=left+1200;
+
+        }
+        list.style.left=left+"px";
+        for(let i=0;i<4;i++){
+            if(i==left/-1200){
+                buttons[i].className="on";
+            }
+            else{
+                buttons[i].className="";
+            }
+        }
+
+    }
+    setInterval(right,3000);  //周期
+
+    function animate(offset) {
+      let left = parseInt(getComputedStyle(list).left);
+      let newLeft = left - offset * width;
+      list.style.left = newLeft + "px";
+      if (newLeft <= -num * width) {
+        list.style.left = "0px";
+      }
+      if (newLeft > 0) {
+        list.style.left = -(num - 1) * width + "px";
+      }
+    }
+    prev.onclick = function () {
+      animate(-1);
+    };
+    next.onclick = function () {
+      animate(1);
+    };
+  </script>
+</body>
+</html>
