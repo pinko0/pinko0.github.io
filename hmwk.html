@@ -107,6 +107,12 @@
         margin-top: 10px;
         margin-left: 30px;
         
+        
+    }
+
+    .photo1{
+        margin-top: 10px;
+        margin-right: 0px;
     }
     /* .photo0_1{
       float: right;
@@ -381,7 +387,7 @@
         width: 1200px;
         
     }
-    .goback{
+    /* .goback{
         width: 40px;
         height: 40px;
         background-color: #b0baf2;
@@ -390,6 +396,23 @@
         bottom: 50px;
         border-radius: 50%;
         margin-right: 2px;
+    } */
+    
+    #btn{
+        width: 40px;
+        height: 30px;
+        background-color: #ccd1eb;
+        position: fixed;
+        right: 10px;
+        bottom: 40px;
+        border-radius: 100%;
+        margin-right: 2px;
+        text-align: center;
+        font-weight: bold;
+
+    }
+    #btn:hover{
+      color: azure;
     }
     .photo00{
       float: right;
@@ -456,19 +479,21 @@
       <!-- <img src="img/flw.png" width="100px" height="100px" />
       <img src="img/flw.png" width="100px" height="100px" />
       <img src="img/flw.png" width="100px" height="100px" /> -->
-    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
-    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
-    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
-    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
-    <img src="img/爱心小屋p0.3.png" width="150px" height="100px" />
-
+    <img src="img/爱心小屋p0.3.png" width="200px" height="100px" />
+    <!-- <img src="img/爱心小屋p0.3.png" width="150px" height="100px" /> -->
+    <img src="img/爱心小屋p0.3.png" width="200px" height="100px" />
+    <img src="img/爱心小屋p0.3.png" width="200px" height="100px" />
+    <img src="img/爱心小屋p0.06.jpg" width="180px" height="120px" />
+ 
+    
      
      
   </div>
   
+  
   <ul id="navigation">
     <li>
-      <a href="#" >首页</a>
+      <a href="https://pinko0.github.io/hmwk.html" >首页</a>
       
     </li>
     <li>
@@ -520,47 +545,7 @@
 
 
     
-    <!-- <li>
-      <a href="#">栏目2</a>
-      <ul>
-        <li>
-          <a href="#">栏目2->菜单1</a>
-          <ul>
-            <li>
-              <a href="#">菜单1</a>
-              <ul>
-                <li>
-                  <a href="#">菜单3</a>
-                  <ul>
-                    <li><a href="#">菜单5</a></li>
-                    <li><a href="#">菜单6</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">菜单4</a></li>
-              </ul>
-            </li>
-            <li><a href="#">菜单2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">栏目2->菜单2</a></li>
-        <li><a href="#">栏目2->菜单3</a></li>
-        <li><a href="#">栏目2->菜单4</a></li>
-        <li><a href="#">栏目2->菜单5</a></li>
-      </ul>
-    </li>
-  </ul> -->
-
-<!-- <div class="header" id="hd">
-        
-
-<h3>首页</h3>
-<h3>组织概况</h3>
-<h3>新闻动态</h3>
-<h3>业务工作</h3>
-<h3>信息公开</h3>
-<h3><a href="https://pinko0.github.io/a.html">我要参与</a></h3>
-
-</div> -->
+   
 
 <div id="container">
     <div id="list">
@@ -699,10 +684,15 @@
     </ul>
     </div>
   </div>
- 
+
+ <div id="totop" >
+    <c href=" " id="btn" >top</c>
+</div>
+
   <div class="footer" ></div>
   
-  <div class="goback"></div>
+
+  <!-- <div class="goback"></div> -->
   <div class="container">
     <div class="end"><p>Copyright©2022-现在 lovehouse.org.cn All rights reserved.</p></div>
     <div class="photo00"><img src="img/爱心小屋p0.01.png" width="350px" height="130px" /></div>
@@ -836,6 +826,48 @@
     next.onclick = function () {
       animate(1);
     };
+
+    
   </script>
+  <script type="text/javascript">
+    window.onload = function () {
+        // 1.找到页面中的按钮
+        var totop = document.getElementById("btn");
+        totop.style.display ="none";
+        var timer = null;
+
+        // 2. 给按钮绑定点击事件
+        totop.onclick =function () {
+            // 周期性定时
+            timer = setInterval(function () {
+                // 3.获取滚动条距离浏览器顶端的距离
+                var backTop = document.documentElement.scrollTop || 
+                document.body.scrollTop;
+
+                // 越滚越慢
+                speedTop =backTop/5;
+                document.documentElement.scrollTop=backTop-speedTop;
+                if(backTop==0){
+                    clearInterval(timer);
+                }
+            },30)
+        }
+        // 设置临界值
+        var pageHeight =700;
+        window.onscroll =function () {
+            var backTop = document.documentElement.scrollTop || 
+            document.body.scrollTop;
+            if(backTop>pageHeight){
+                totop.style.display="block";
+            }else{
+                totop.style.display="none";
+            }
+
+        }
+    }
+
+</script>
+
+
 </body>
 </html>
